@@ -1,3 +1,5 @@
+import 'package:book_gallery/constants/constants.dart';
+import 'package:book_gallery/widgets/book_item.dart';
 import 'package:flutter/material.dart';
 
 class HomeTab extends StatelessWidget {
@@ -6,7 +8,15 @@ class HomeTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(child: Text("home tab")),
+      body: Padding(
+          padding: paddingTiny,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              // Text("home tab"),
+              BookItem(),
+            ],
+          )),
     );
   }
 }

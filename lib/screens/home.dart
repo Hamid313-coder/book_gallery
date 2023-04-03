@@ -1,4 +1,6 @@
 import 'package:book_gallery/constants/constants.dart';
+import 'package:book_gallery/screens/home_tab.dart';
+import 'package:book_gallery/screens/search.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -11,14 +13,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  final List<Widget> _tabs = [
-    Center(
-      child: Text("helo"),
-    ),
-    Center(
-      child: Text("helo222"),
-    ),
-  ];
+  final List<Widget> _tabs = const [HomeTab(), SearchTab()];
   int _currentIndex = 0;
   @override
   Widget build(BuildContext context) {
@@ -34,8 +29,9 @@ class _HomeState extends State<Home> {
                   icon: Icon(
                     Icons.home_filled,
                   ),
-                  label: "Search"),
-              BottomNavigationBarItem(icon: Icon(Icons.search), label: "Home"),
+                  label: "Home"),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.search), label: "Search"),
             ]),
       ),
     );
