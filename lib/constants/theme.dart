@@ -35,7 +35,7 @@ ThemeData getTheme(BuildContext context) => ThemeData(
         ),
         headline4: TextStyle(
             color: ColorBlock.white,
-            fontSize: FontSizing.large,
+            fontSize: FontSizing.medium,
             fontWeight: FontWeight.w600,
             fontStyle: FontStyle.normal,
             letterSpacing: 0.3),
