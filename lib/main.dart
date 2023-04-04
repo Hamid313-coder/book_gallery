@@ -1,14 +1,12 @@
-import 'package:book_gallery/constants/color_block.dart';
-import 'package:book_gallery/constants/constants.dart';
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
 import 'package:book_gallery/constants/theme.dart';
 import 'package:book_gallery/screens/home.dart';
 import 'package:book_gallery/stores/books/books_store.dart';
-import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {

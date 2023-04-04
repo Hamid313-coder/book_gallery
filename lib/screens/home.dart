@@ -1,9 +1,8 @@
-import 'package:book_gallery/constants/constants.dart';
-import 'package:book_gallery/screens/home_tab.dart';
-import 'package:book_gallery/screens/search.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+
+import 'package:book_gallery/screens/search.dart';
+import 'package:book_gallery/screens/home_tab.dart';
+import 'package:book_gallery/constants/constants.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});

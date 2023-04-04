@@ -1,7 +1,8 @@
-import 'package:book_gallery/constants/color_block.dart';
-import 'package:book_gallery/constants/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import 'package:book_gallery/constants/color_block.dart';
+import 'package:book_gallery/constants/constants.dart';
 
 ThemeData getTheme(BuildContext context) => ThemeData(
       fontFamily: GoogleFonts.poppins().fontFamily,

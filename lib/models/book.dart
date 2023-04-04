@@ -1,6 +1,6 @@
 class Book {
   final String title;
-  final List<String>? authors;
+  final List<dynamic>? authors;
   final String? image;
   final String? publisher;
   final String? description;
@@ -15,7 +15,7 @@ class Book {
   factory Book.fromJson(Map<String, dynamic> json) => Book(
       title: json["volumeInfo"]["title"],
       authors: json["volumeInfo"]["authors"],
-      image: json["volumeInfo"]["imageLinks"]["thumbnail"],
+      image: (json["volumeInfo"]["imageLinks"] ?? {})["thumbnail"],
       publisher: json["volumeInfo"]["publisher"],
       description: json["volumeInfo"]["description"]);
 }
