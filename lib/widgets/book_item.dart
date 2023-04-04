@@ -3,7 +3,15 @@ import 'package:book_gallery/constants/constants.dart';
 import 'package:flutter/material.dart';
 
 class BookItem extends StatelessWidget {
-  const BookItem({super.key});
+  const BookItem(
+      {super.key,
+      required this.title,
+      required this.image,
+      required this.authors});
+
+  final String title;
+  final String? image;
+  final List<dynamic>? authors;
 
   @override
   Widget build(BuildContext context) {
@@ -21,26 +29,44 @@ class BookItem extends StatelessWidget {
               color: ColorBlock.blueGrey,
               borderRadius: borderRadius,
             ),
-            child: Image.asset(
-              "images/ff.png",
-              fit: BoxFit.cover,
-            ),
+            child: image != null
+                ? Image.network(
+                    image!,
+                    fit: BoxFit.cover,
+                  )
+                : null,
           ),
           const SizedBox(
             width: Spacing.small,
           ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                "Search Engine Optimizaiton",
-                style: Theme.of(context).textTheme.headline4,
-              ),
-              const SizedBox(
-                height: Spacing.xSmall,
-              ),
-              Text("Authors: "),
-            ],
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  title,
+                  style: Theme.of(context).textTheme.headline4,
+                ),
+                const SizedBox(
+                  height: Spacing.xSmall,
+                ),
+                if (authors != null)
+                  Row(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      const Text("Authors: "),
+                      if (authors!.length == 1) Text(authors![0].toString()),
+                      if (authors!.length > 1)
+                        ...authors!
+                            .map((author) =>
+                                authors!.indexOf(author) == authors!.length - 1
+                                    ? Text(author.toString())
+                                    : Text("${author.toString()}, "))
+                            .toList(),
+                    ],
+                  ),
+              ],
+            ),
           ),
         ]),
       ),
